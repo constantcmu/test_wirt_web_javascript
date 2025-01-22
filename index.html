@@ -10,15 +10,15 @@
         :root {
             --bg-color: #ffffff;
             --text-color: #000000;
-            --table-bg: #ffffff;
+            --table-bg: #7c7a7a;
             --border-color: #dee2e6;
         }
 
         .dark-mode {
-            --bg-color: #1a1a1a;
+            --bg-color: #121212;      /* ปรับพื้นหลังให้เข้มขึ้น */
             --text-color: #ffffff;
-            --table-bg: #2d2d2d;
-            --border-color: #404040;
+            --table-bg: #ffffff;      /* ปรับพื้นหลังตารางให้สว่างขึ้น */
+            --border-color: #505050;   /* ปรับสีเส้นขอบให้สว่างขึ้น */
         }
 
         body {
@@ -100,6 +100,15 @@
             animation: highlight 1s ease-out;
         }
 
+        .highlight-chart {
+            animation: highlightChart 1s ease-out;
+        }
+
+        @keyframes highlightChart {
+            0% { background-color: rgba(250, 250, 0, 0.226); }
+            100% { background-color: transparent; }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -130,6 +139,7 @@
             color: var(--text-color);
             border: 1px solid var(--border-color);
             cursor: pointer;
+            background-color: #2d2d2d;  /* เพิ่มสีพื้นหลังปุ่มใน dark mode */
         }
 
         .btn-view-chart:hover {

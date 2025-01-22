@@ -343,10 +343,10 @@ function updateTable(priceData) {
     };
 
     if (existingRow) {
-        // Update existing row with animation
-        existingRow.classList.remove('highlight');
-        void existingRow.offsetWidth; // Trigger reflow
-        existingRow.classList.add('highlight');
+        // ลบบรรทัดนี้ออก
+        // existingRow.classList.remove('highlight');
+        // void existingRow.offsetWidth;
+        // existingRow.classList.add('highlight');
 
         // Update existing row
         existingRow.cells[1].textContent = priceData.pair;
@@ -362,6 +362,9 @@ function updateTable(priceData) {
 
         // Update chart
         const chartCell = existingRow.cells[3];
+        chartCell.classList.remove('highlight-chart');
+        void chartCell.offsetWidth; // Trigger reflow
+        chartCell.classList.add('highlight-chart');
         const chartCanvas = chartCell.querySelector('canvas');
         if (chartCanvas && typeof priceData.price === 'number') {
             const chart = Chart.getChart(chartCanvas);
