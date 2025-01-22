@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+}
+
+.calculator {
+    background: #1c1c1e;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 350px;
+}
+
+#display {
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    border: none;
+    text-align: right;
+    padding: 10px;
+    font-size: 48px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+button {
+    background: #333;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #444;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background: #ff9500;
+    color: #fff;
+}
+
+.operator:hover {
+    background: #ffa726;
+}
+
+.scientific {
+    background: #a5a5a5;
+    color: #000;
+}
+
+.scientific:hover {
+    background: #b5b5b5;
+}
+
+.equals {
+    background: #ff9500;
+    color: #fff;
+    border-radius: 35px;
+    grid-column: span 2;
+    width: 100%;
+}
+
+.zero {
+    grid-column: span 2;
+    border-radius: 35px;
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 30px;
+}

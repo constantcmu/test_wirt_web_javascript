@@ -449,3 +449,9 @@ if (localStorage.getItem('darkMode') === 'true') {
 // อัพเดทราคาครั้งแรกและตั้งเวลาอัพเดททุก 1 วินาที
 updateAllPrices();
 setInterval(updateAllPrices, 1000);
+
+// แก้ไขฟังก์ชัน openCalculator
+function openCalculator() {
+    // เปิดไฟล์ calculator.html จาก folder calculator แทนการสร้าง window ใหม่
+    window.open('./calculator/calculator.html', 'Calculator', 'width=400,height=600');
+}
