@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>เครื่องคิดเลขวิทยาศาสตร์</title>
     <link rel="stylesheet" href="styles_calculator.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
-    <div class="calculator">
+    <!-- ปุ่ม Screenshot -->
+    <button id="screenshotBtn" class="screenshot-btn">📸 Screenshot</button>
+    
+    <div class="calculator" id="calculator">
         <input type="text" id="display" disabled>
         <div class="buttons">
             <!-- แถวบน - ปุ่มควบคุม -->

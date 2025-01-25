@@ -44,3 +44,28 @@ function playClickSound() {
 document.querySelectorAll('button').forEach(button => {
     button.addEventListener('click', playClickSound);
 });
+
+// ฟังก์ชันสำหรับถ่ายภาพหน้าจอ
+function takeScreenshot() {
+    const calculator = document.getElementById('calculator');
+    
+    html2canvas(calculator).then(canvas => {
+        // สร้างลิงก์สำหรับดาวน์โหลด
+        const link = document.createElement('a');
+        link.download = 'calculator-screenshot.png';
+        link.href = canvas.toDataURL('image/png');
+        
+        // จำลองการคลิกเพื่อดาวน์โหลด
+        link.click();
+    });
+}
+
+// เพิ่ม Event Listener สำหรับปุ่ม Screenshot
+document.getElementById('screenshotBtn').addEventListener('click', () => {
+    // เพิ่มเอฟเฟกต์แฟลช
+    document.body.style.backgroundColor = 'white';
+    setTimeout(() => {
+        document.body.style.backgroundColor = '';
+        takeScreenshot();
+    }, 150);
+});

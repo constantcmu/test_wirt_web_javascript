@@ -161,6 +161,25 @@ button:active {
     color: #fff;
 }
 
+.screenshot-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.screenshot-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
 @media (max-width: 500px) {
     .calculator {
         margin: 10px;
