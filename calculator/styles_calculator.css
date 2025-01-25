@@ -4,14 +4,15 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #2c3e50, #3498db);
+    background: linear-gradient(45deg, #1a2a3a, #2980b9);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #fff;
 }
 
 .calculator {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 15px 25px rgba(0,0,0,0.15);
@@ -27,7 +28,7 @@ body {
 #display {
     width: 100%;
     height: 80px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     border: none;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -37,21 +38,43 @@ body {
     padding: 10px;
     box-sizing: border-box;
     outline: none;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Digital-7', monospace;
 }
 
 .buttons {
+    display: grid;
+    grid-template-areas: 
+        "control control control control"
+        "numbers numbers numbers operators"
+        "scientific scientific scientific operators";
+    gap: 10px;
+}
+
+.number-pad {
+    grid-area: numbers;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.operators {
+    grid-area: operators;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.scientific-functions {
+    grid-area: scientific;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
-.scientific .buttons {
-    grid-template-columns: repeat(5, 1fr);
-}
-
 button {
     border: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     color: #fff;
     padding: 15px;
     font-size: 1.2em;
@@ -64,11 +87,15 @@ button {
     height: 60px;
     width: 60px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
 }
 
 button:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 button:active {
@@ -76,8 +103,9 @@ button:active {
 }
 
 .operator {
-    background: rgba(255, 165, 0, 0.3);
+    background: rgba(255, 145, 0, 0.25);
     color: #fff;
+    font-weight: bold;
 }
 
 .operator:hover {
@@ -85,8 +113,8 @@ button:active {
 }
 
 .scientific {
-    background: rgba(100, 100, 255, 0.3);
-    color: #000;
+    background: rgba(79, 195, 247, 0.25);
+    color: #fff;
 }
 
 .scientific:hover {
@@ -94,11 +122,13 @@ button:active {
 }
 
 .equals {
-    background: rgba(0, 255, 127, 0.3);
+    background: linear-gradient(145deg, rgba(46, 213, 115, 0.4), rgba(46, 213, 115, 0.6));
     color: #fff;
     border-radius: 35px;
     grid-column: span 2;
     width: 100%;
+    margin-top: 10px;
+    grid-column: 1 / -1;
 }
 
 .zero {
@@ -126,6 +156,11 @@ button:active {
     background: rgba(255, 255, 255, 0.3);
 }
 
+.control {
+    background: rgba(100, 100, 100, 0.2);
+    color: #fff;
+}
+
 @media (max-width: 500px) {
     .calculator {
         margin: 10px;
@@ -134,5 +169,12 @@ button:active {
     button {
         padding: 10px;
         font-size: 1em;
+    }
+
+    .buttons {
+        grid-template-areas: 
+            "control control control control"
+            "numbers numbers numbers operators"
+            "scientific scientific scientific scientific";
     }
 }

@@ -8,45 +8,50 @@
 </head>
 <body>
     <div class="calculator">
-        <!-- จอแสดงผล -->
         <input type="text" id="display" disabled>
-        <!-- ปุ่มเครื่องคิดเลข -->
         <div class="buttons">
-            <!-- แถวที่ 1 -->
-            <button onclick="clearDisplay()" class="scientific">AC</button>
-            <button onclick="deleteLast()" class="scientific">DEL</button>
-            <button onclick="appendToDisplay('(')" class="scientific">(</button>
-            <button onclick="appendToDisplay(')')" class="scientific">)</button>
-            <button onclick="appendToDisplay('/')" class="operator">÷</button>
-            <!-- แถวที่ 2 -->
-            <button onclick="appendToDisplay('Math.sqrt(')" class="scientific">√</button>
-            <button onclick="appendToDisplay('Math.pow(')" class="scientific">x^y</button>
-            <button onclick="appendToDisplay('Math.sin(')" class="scientific">sin</button>
-            <button onclick="appendToDisplay('Math.cos(')" class="scientific">cos</button>
-            <button onclick="appendToDisplay('Math.tan(')" class="scientific">tan</button>
-            <!-- แถวที่ 3 -->
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('*')" class="operator">×</button>
-            <button onclick="appendToDisplay('Math.log10(')" class="scientific">log</button>
-            <!-- แถวที่ 4 -->
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('-')" class="operator">−</button>
-            <button onclick="appendToDisplay('Math.log(')" class="scientific">ln</button>
-            <!-- แถวที่ 5 -->
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('+')" class="operator">+</button>
-            <button onclick="appendToDisplay('Math.PI')" class="scientific">π</button>
-            <!-- แถวที่ 6 -->
-            <button onclick="appendToDisplay('0')" class="zero">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="appendToDisplay('Math.pow(10,')" class="scientific">10^x</button>
-            <button onclick="appendToDisplay('Math.pow(')" class="scientific">x^2</button>
+            <!-- แถวบน - ปุ่มควบคุม -->
+            <button onclick="clearDisplay()" class="control">AC</button>
+            <button onclick="deleteLast()" class="control">DEL</button>
+            <button onclick="appendToDisplay('(')" class="control">(</button>
+            <button onclick="appendToDisplay(')')" class="control">)</button>
+            
+            <!-- กลุ่มตัวเลข -->
+            <div class="number-pad">
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('0')" class="zero">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+            </div>
+
+            <!-- กลุ่มเครื่องหมายพื้นฐาน -->
+            <div class="operators">
+                <button onclick="appendToDisplay('/')" class="operator">÷</button>
+                <button onclick="appendToDisplay('*')" class="operator">×</button>
+                <button onclick="appendToDisplay('-')" class="operator">−</button>
+                <button onclick="appendToDisplay('+')" class="operator">+</button>
+            </div>
+
+            <!-- กลุ่มฟังก์ชันวิทยาศาสตร์ -->
+            <div class="scientific-functions">
+                <button onclick="appendToDisplay('Math.sqrt(')" class="scientific">√</button>
+                <button onclick="appendToDisplay('Math.pow(')" class="scientific">x²</button>
+                <button onclick="appendToDisplay('Math.sin(')" class="scientific">sin</button>
+                <button onclick="appendToDisplay('Math.cos(')" class="scientific">cos</button>
+                <button onclick="appendToDisplay('Math.tan(')" class="scientific">tan</button>
+                <button onclick="appendToDisplay('Math.log10(')" class="scientific">log</button>
+                <button onclick="appendToDisplay('Math.log(')" class="scientific">ln</button>
+                <button onclick="appendToDisplay('Math.PI')" class="scientific">π</button>
+            </div>
+
+            <!-- ปุ่มเท่ากับ -->
             <button onclick="calculate()" class="equals">=</button>
         </div>
     </div>
