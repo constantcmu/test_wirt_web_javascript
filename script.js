@@ -261,18 +261,61 @@ function viewDetailedChart(exchange) {
                                 intersect: false,
                                 mode: 'index'
                             },
+                            plugins: {
+                                zoom: {
+                                    pan: {
+                                        enabled: true,
+                                        mode: 'xy',
+                                    },
+                                    zoom: {
+                                        enabled: true,
+                                        mode: 'xy',
+                                    }
+                                },
+                                legend: {
+                                    display: false // Hide legend again, was just for zoom test
+                                },
+                                tooltip: {
+                                    enabled: true, // Enable tooltips
+                                    mode: 'index',
+                                    intersect: false
+                                },
+                                crosshair: { // Add crosshair plugin
+                                    line: {
+                                        color: '#aaaaaa',
+                                        width: 1,
+                                        dashPattern: [3, 3]
+                                    },
+                                    zoom: {
+                                        enabled: false, // Disable zoom on crosshair
+                                    },
+                                    snap: {
+                                        enabled: true, // Snap crosshair to data points
+                                    }
+                                }
+                            },
                             scales: {
                                 y: {
                                     beginAtZero: false,
                                     grid: {
-                                        color: 'rgba(160, 160, 160, 0.2)'
+                                        color: 'rgba(160, 160, 160, 0.4)', // More visible grid lines
+                                        lineWidth: 0.5,
+                                        borderDash: [2, 4]
+                                    },
+                                    ticks: {
+                                        color: '#777' // Ticks color
                                     }
                                 },
                                 x: {
                                     grid: {
-                                        color: 'rgba(160, 160, 160, 0.2)'
+                                        color: 'rgba(160, 160, 160, 0.4)', // More visible grid lines
+                                        lineWidth: 0.5,
+                                        borderDash: [2, 4]
+                                    },
+                                    ticks: {
+                                        color: '#777'  // Ticks color
                                     }
-                                }
+                                },
                             },
                             animation: {
                                 duration: 0

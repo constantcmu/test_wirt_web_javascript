@@ -156,24 +156,10 @@
 
         <h1 class="text-center mb-4">Crypto Price Tracker</h1>
         
-        <div class="card p-3 mb-4">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <label for="tradingPair" class="form-label mb-0">Select Trading Pair:</label>
-                <select id="tradingPair" class="form-select w-auto" onchange="changeTradingPair()">
-                    <option value="BTC/USDT">BTC/USDT (Bitcoin)</option>
-                    <option value="ETH/USDT">ETH/USDT (Ethereum)</option>
-                    <option value="SOL/USDT">SOL/USDT (Solana)</option>
-                    <option value="BNB/USDT">BNB/USDT (Binance Coin)</option>
-                    <option value="ADA/USDT">ADA/USDT (Cardano)</option>
-                    <option value="XRP/USDT">XRP/USDT (Ripple)</option>
-                    <option value="DOGE/USDT">DOGE/USDT (Dogecoin)</option>
-                </select>
-            </div>
-            <div class="text-center">
-                <button class="btn btn-outline-primary" onclick="openCalculator()">
-                    <i class="fas fa-calculator"></i> Open Calculator
-                </button>
-            </div>
+        <div class="card p-3 mb-4 text-center">
+            <button class="btn btn-outline-primary" onclick="openCalculator()">
+                <i class="fas fa-calculator"></i> Open Calculator
+            </button>
         </div>
 
         <div class="card">
@@ -187,7 +173,6 @@
                             <th>Chart (24h)</th>
                             <th>Change (24h)</th>
                             <th>Last Updated</th>
-                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
